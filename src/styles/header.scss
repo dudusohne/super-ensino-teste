@@ -1,0 +1,41 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f6fcfe;
+
+  .top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100%;
+    height: 8vh;
+
+    span {
+      font-weight: bold;
+    }
+  }
+
+  .title {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+
+    width: 100%;
+    height: 5vh;
+
+    span {
+      font-weight: medium;
+    }
+  }
+
+  .container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    width: 100%;
+  }
+}

@@ -1,0 +1,34 @@
+[
+  {
+    "name": "Exercício 1",
+    "id": 1,
+    "questions": [
+      "Queria saber o por quê dessa confusão.",
+      "",
+      "Queria saber porque você faltou aula.",
+      "Acordo cedo porque gosto de estudar"
+    ],
+    "answers": [
+      { "a": "ll e lll" },
+      { "b": "apenas a l" },
+      { "c": "l, ll e lll" },
+      { "d": "apenas a lll" }
+    ]
+  },
+  {
+    "name": "Exercício 2",
+    "id": 2,
+    "questions": [
+      "Queria saber o por quê dessa confusão.",
+      "",
+      "Queria saber porque você faltou aula.",
+      "Acordo cedo porque gosto de estudar"
+    ],
+    "answers": [
+      { "a": "apenas a l" },
+      { "b": "apenas a l" },
+      { "c": "apenas a l" },
+      { "d": "apenas a l" }
+    ]
+  }
+]
