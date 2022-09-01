@@ -1,17 +1,16 @@
 import './questionButton.scss'
+import React from 'react'
 
 interface Button {
     name: string;
     click?: () => void;
+    active?: boolean;
 }
 
-export function QuestionButton({ name, click }: Button) {
+export function QuestionButton({ name, click, active }: Button) {
     return (
-        <button onClick={click} className="button-comp">
-            <span style={{
-                fontSize: '1rem',
-                fontWeight: 'medium'
-            }}>{name}</span>
+        <button onClick={click} className="button-comp" style={{ backgroundColor: `${!!active ? '#38d0fc' : '#fff'}`, }}>
+            <span style={{ fontSize: '1rem', fontWeight: 'medium', color: '#313131' }}>{name}</span>
         </button>
     )
 }

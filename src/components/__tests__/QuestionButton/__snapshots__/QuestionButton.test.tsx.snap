@@ -1,0 +1,47 @@
+// Vitest Snapshot v1
+
+exports[`Link changes the class when hovered 1`] = `
+<button
+  className="button-comp"
+  style={
+    {
+      "backgroundColor": "#fff",
+    }
+  }
+>
+  <span
+    style={
+      {
+        "color": "#313131",
+        "fontSize": "1rem",
+        "fontWeight": "medium",
+      }
+    }
+  >
+    asd
+  </span>
+</button>
+`;
+
+exports[`Link changes the class when hovered 2`] = `
+<button
+  className="button-comp"
+  style={
+    {
+      "backgroundColor": "#fff",
+    }
+  }
+>
+  <span
+    style={
+      {
+        "color": "#313131",
+        "fontSize": "1rem",
+        "fontWeight": "medium",
+      }
+    }
+  >
+    asd
+  </span>
+</button>
+`;

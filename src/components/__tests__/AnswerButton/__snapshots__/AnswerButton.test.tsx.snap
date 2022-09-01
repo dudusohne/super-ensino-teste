@@ -1,0 +1,57 @@
+// Vitest Snapshot v1
+
+exports[`create AnswerButton 1`] = `
+<button
+  className="answerButton"
+>
+  <div
+    className="answer-letter-wrapper"
+    style={
+      {
+        "backgroundColor": "#cfcfcf",
+      }
+    }
+  >
+    <p
+      style={
+        {
+          "color": "#7a7a7a",
+        }
+      }
+    >
+      a
+    </p>
+  </div>
+  <span>
+    resposta
+  </span>
+</button>
+`;
+
+exports[`create AnswerButton 2`] = `
+<button
+  className="answerButton"
+>
+  <div
+    className="answer-letter-wrapper"
+    style={
+      {
+        "backgroundColor": "#cfcfcf",
+      }
+    }
+  >
+    <p
+      style={
+        {
+          "color": "#7a7a7a",
+        }
+      }
+    >
+      a
+    </p>
+  </div>
+  <span>
+    resposta
+  </span>
+</button>
+`;

@@ -1,8 +1,34 @@
 .answerButton {
   display: flex;
   flex-direction: row;
-  background: none;
+  background-color: #fcfcfc;
+  border-radius: 3px;
   border: none;
 
   margin-top: 5px;
+
+  align-items: center;
+
+  .answer-letter-wrapper {
+    display: flex;
+    padding: 6px;
+    border-radius: 3px;
+  }
+
+  span {
+    margin-left: 10px;
+    font-family: "Noto Sans", sans-serif;
+    font-weight: bold;
+    color: rgb(85, 85, 85);
+  }
+
+  p {
+    font-weight: bold;
+    font-family: "Noto Sans", sans-serif;
+  }
+}
+
+.answerButton:hover {
+  background-color: #c9d9df;
+  cursor: pointer;
 }

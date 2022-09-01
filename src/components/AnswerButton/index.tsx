@@ -1,3 +1,5 @@
+import React from 'react'
+
 import './answerButton.scss';
 
 interface Props {
@@ -9,14 +11,10 @@ interface Props {
 export function AnswerButton(props: Props) {
     return (
         <button
-        className="answerButton"
+            className="answerButton"
             onClick={props.onClickAnswer}>
-            <div style={{
-                padding: '6px',
-                backgroundColor: `${props.isActive ? 'blue' : 'gray'}`,
-                borderRadius: '3px'
-            }}>
-                a
+            <div className="answer-letter-wrapper" style={{ backgroundColor: `${props.isActive ? '#38d0fc' : '#cfcfcf'}`, }}>
+                <p style={{ color: `${props.isActive ? '#07333f' : '#7a7a7a'}`, }}>a</p>
             </div>
             <span>{props.answer}</span>
         </button>
