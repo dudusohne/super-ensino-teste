@@ -1,14 +1,20 @@
 import { useState } from "react";
-import { FaChevronCircleUp } from "react-icons/fa";
+import { FaChevronCircleDown, FaChevronCircleUp } from "react-icons/fa";
 import { TiDocumentText } from "react-icons/ti";
 import { AnswerButton } from "../components/AnswerButton";
+import { Header } from "../components/Header";
 import { QuestionButton } from "../components/QuestionButton";
+import { QuestionItem } from "../components/QuestionItem";
 
 export const answerCharIndex = ['a', 'b', 'c', 'd'];
+
+import '../styles/home.scss';
 
 export function Home() {
     const [questionToShow, setQuestionToShow] = useState<any>()
     const [active, setActive] = useState<string>()
+
+    const [closeHeader, setCloseHeader] = useState<boolean>(false)
 
     const questions = [
         {
@@ -95,75 +101,41 @@ export function Home() {
 
     return (
         <>
-            <div className="header" style={{
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-                backgroundColor: '#f6fcfe'
-            }}>
-                <div className="top" style={{
-                    display: 'flex',
-                    flexDirection: 'row',
-                    justifyContent: 'space-between',
-                    alignItems: 'center',
-                    width: '100%',
-                    height: '8vh'
-                }}>
-                    <span style={{
-                        fontWeight: 'bold',
-                    }}>Acentuação Gráfica</span>
-                    <FaChevronCircleUp />
-                </div>
-                <div className="title" style={{
-                    display: 'flex',
-                    flexDirection: 'row',
-                    justifyContent: 'flex-start',
-                    width: '100%',
-                    height: ' 5vh'
-                }}>
-                    <TiDocumentText />
-                    <span style={{
-                        fontWeight: 'bold',
-                    }}>Uso dos Porquês</span>
-                </div>
-                <div className="container" style={{
-                    display: 'flex',
-                    flexDirection: 'row',
-                    flexWrap: 'wrap',
-                    width: '100%'
-                }}>
-                    {questions.map((question: any) => {
-                        return <QuestionButton name={question.name} click={() => handleQuestionSelect(question)} key={question.id} />
-                    })}
-                </div>
-            </div >
-            <div style={{
-                display: 'flex',
-                flexDirection: 'column',
-            }}>
+            <Header onClickClose={() => setCloseHeader(true)} close={closeHeader}>
+                {questions.map((question: any) => {
+                    return <QuestionButton name={question.name} click={() => handleQuestionSelect(question)} key={question.id} />
+                })}
+            </Header>
+            {!!closeHeader ?
+                <div className="container-closed">
+                    <FaChevronCircleDown className="chevron-down" onClick={() => setCloseHeader(false)} />
+                </div> : ''
+            }
+            <div className="container-answers">
                 {questionToShow ?
                     <>
-                        <span style={{
-                            marginTop: '10px',
-                            color: '#38d0fc'
-                        }}>Exercício {questionToShow?.id + `/11`}</span>
+                        <span style={{ color: '#38d0fc' }}>Exercício {questionToShow?.id + `/11`}</span>
+
                         <span>(SUPER ENSINO) Analise as afirmativas a seguir:</span>
+
                         {questionToShow?.questions?.map((quest: any) => {
-                            return <span key={quest} style={{
-                                marginTop: '1rem'
-                            }}>{quest}</span>
+                            return <QuestionItem question={quest} key={quest} />
                         })}
-                        <span style={{
-                            marginTop: '1rem'
-                        }}>Com relação ao uso dos porquês, estão corretas:</span>
-                        <div style={{ marginTop: '1.3rem' }}>
+
+                        <span style={{ marginTop: '1rem' }}>Com relação ao uso dos porquês, estão corretas:</span>
+
+                        <div className="answers">
                             {questionToShow?.answers?.map((answer: any) => {
                                 return (
                                     <AnswerButton isActive={active === answer} answer={answer} onClickAnswer={() => setActive(answer)} />
                                 )
                             })}
                         </div>
-                    </> : <span>SELECIONE UMA QUESTÃO!</span>
+                    </> :
+                    <div className="noQuestionSelected">
+                        <p>NENHUM EXERCÍCIO SELECIONADO</p>
+                        <span>SELECIONE UM EXERCÍCIO!</span>
+                    </div>
                 }
             </div>
         </>

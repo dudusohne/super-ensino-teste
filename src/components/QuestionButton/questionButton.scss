@@ -1,0 +1,20 @@
+.button-comp {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  border: 2px solid #38d0fc;
+  max-width: 30rem;
+  padding: 5px 38px 5px 38px;
+  margin-left: 1rem;
+  margin-top: 5px;
+  background: none;
+  font-family: 'Noto Sans', sans-serif;
+  font-weight: bold;
+}
+
+.button-comp:hover {
+    background-color: #38d0fc;
+    cursor: pointer;
+}

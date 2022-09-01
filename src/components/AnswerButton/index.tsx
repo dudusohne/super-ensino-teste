@@ -1,4 +1,4 @@
-import { answerCharIndex } from '../pages/Home'
+import './answerButton.scss';
 
 interface Props {
     isActive?: boolean;
@@ -9,13 +9,8 @@ interface Props {
 export function AnswerButton(props: Props) {
     return (
         <button
-            onClick={props.onClickAnswer}
-            style={{
-                display: 'flex',
-                flexDirection: 'row',
-                background: 'none',
-                border: 'none',
-            }}>
+        className="answerButton"
+            onClick={props.onClickAnswer}>
             <div style={{
                 padding: '6px',
                 backgroundColor: `${props.isActive ? 'blue' : 'gray'}`,

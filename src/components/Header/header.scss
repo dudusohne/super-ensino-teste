@@ -10,11 +10,22 @@
     justify-content: space-between;
     align-items: center;
 
+    padding: 0 16px 0 16px;
+
     width: 100%;
     height: 8vh;
 
     span {
       font-weight: bold;
+    }
+
+    .chevron {
+      color: #38d0fc;
+    }
+
+    .chevron:hover {
+      color: #11576b;
+      cursor: pointer;
     }
   }
 
@@ -22,6 +33,8 @@
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
+
+    padding: 0 16px 0 16px;
 
     width: 100%;
     height: 5vh;
@@ -37,5 +50,7 @@
     flex-wrap: wrap;
 
     width: 100%;
+
+    padding: 0 16px 0 16px;
   }
 }

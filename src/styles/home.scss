@@ -1,0 +1,48 @@
+.container-closed {
+  display: flex;
+  width: 100%;
+  height: 3rem;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 21px 16px 0 0;
+
+  .chevron-down {
+    color: #38d0fc;
+  }
+
+  .chevron-down:hover {
+    color: #11576b;
+    cursor: pointer;
+  }
+}
+
+.container-answers {
+  display: flex;
+  flex-direction: column;
+
+  margin-top: 1rem;
+  padding: 20px;
+
+  .answers {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .noQuestionSelected {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+
+    p {
+      font-size: 12px;
+      opacity: 0.7;
+    }
+
+    span {
+      font-size: 1.3rem;
+      align-self: center;
+    }
+  }
+}
