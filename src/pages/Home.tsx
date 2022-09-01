@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FaChevronCircleDown, FaChevronCircleLeft, FaChevronCircleRight, FaChevronCircleUp } from "react-icons/fa";
 import { MdArrowBackIos, MdArrowForwardIos } from 'react-icons/md'
 import { TiDocumentText } from "react-icons/ti";
@@ -17,173 +17,21 @@ export function Home() {
 
     const [closeHeader, setCloseHeader] = useState<boolean>(false)
 
-    const questions = [
-        {
-            "name": "Exercício 1",
-            "id": 1,
-            "questions": [
-                "l - Queria saber o por quê dessa confusão.",
-                "ll - Queria saber porque você faltou aula.",
-                "lll - Acordo cedo porque gosto de estudar"
-            ],
-            "answers": [
-                "ll e lll",
-                "apenas a l",
-                "l, ll e lll",
-                "apenas a lll"
-            ]
-        },
-        {
-            "name": "Exercício 2",
-            "id": 2,
-            "questions": [
-                "l - Queria saber o por quê dessa confusão.",
-                "ll - Queria saber porque você faltou aula.",
-                "lll - Acordo cedo porque gosto de estudar"
-            ],
-            "answers": [
-                "l, ll e lll",
-                "ll e lll",
-                "apenas a lll",
-                "apenas a l"
-            ]
-        },
-        {
-            "name": "Exercício 3",
-            "id": 3,
-            "questions": [
-                "l - Queria saber o por quê dessa confusão.",
-                "ll - Queria saber porque você faltou aula.",
-                "lll - Acordo cedo porque gosto de estudar"
-            ],
-            "answers": [
-                "l, ll e lll",
-                "ll e lll",
-                "apenas a lll",
-                "apenas a l"
-            ]
-        },
-        {
-            "name": "Exercício 4",
-            "id": 4,
-            "questions": [
-                "l - Queria saber o por quê dessa confusão.",
-                "ll - Queria saber porque você faltou aula.",
-                "lll - Acordo cedo porque gosto de estudar"
-            ],
-            "answers": [
-                "l, ll e lll",
-                "ll e lll",
-                "apenas a lll",
-                "apenas a l"
-            ]
-        },
-        {
-            "name": "Exercício 5",
-            "id": 5,
-            "questions": [
-                "l - Queria saber o por quê dessa confusão.",
-                "ll - Queria saber porque você faltou aula.",
-                "lll - Acordo cedo porque gosto de estudar"
-            ],
-            "answers": [
-                "l, ll e lll",
-                "ll e lll",
-                "apenas a lll",
-                "apenas a l"
-            ]
-        },
-        {
-            "name": "Exercício 6",
-            "id": 6,
-            "questions": [
-                "l - Queria saber o por quê dessa confusão.",
-                "ll - Queria saber porque você faltou aula.",
-                "lll - Acordo cedo porque gosto de estudar"
-            ],
-            "answers": [
-                "l, ll e lll",
-                "ll e lll",
-                "apenas a lll",
-                "apenas a l"
-            ]
-        },
-        {
-            "name": "Exercício 7",
-            "id": 7,
-            "questions": [
-                "l - Queria saber o por quê dessa confusão.",
-                "ll - Queria saber porque você faltou aula.",
-                "lll - Acordo cedo porque gosto de estudar"
-            ],
-            "answers": [
-                "l, ll e lll",
-                "ll e lll",
-                "apenas a lll",
-                "apenas a l"
-            ]
-        },
-        {
-            "name": "Exercício 8",
-            "id": 8,
-            "questions": [
-                "l - Queria saber o por quê dessa confusão.",
-                "ll - Queria saber porque você faltou aula.",
-                "lll - Acordo cedo porque gosto de estudar"
-            ],
-            "answers": [
-                "l, ll e lll",
-                "ll e lll",
-                "apenas a lll",
-                "apenas a l"
-            ]
-        },
-        {
-            "name": "Exercício 9",
-            "id": 9,
-            "questions": [
-                "l - Queria saber o por quê dessa confusão.",
-                "ll - Queria saber porque você faltou aula.",
-                "lll - Acordo cedo porque gosto de estudar"
-            ],
-            "answers": [
-                "l, ll e lll",
-                "ll e lll",
-                "apenas a lll",
-                "apenas a l"
-            ]
-        },
-        {
-            "name": "Exercício 10",
-            "id": 10,
-            "questions": [
-                "l - Queria saber o por quê dessa confusão.",
-                "ll - Queria saber porque você faltou aula.",
-                "lll - Acordo cedo porque gosto de estudar"
-            ],
-            "answers": [
-                "l, ll e lll",
-                "ll e lll",
-                "apenas a lll",
-                "apenas a l"
-            ]
-        },
-        {
-            "name": "Exercício 11",
-            "id": 11,
-            "questions": [
-                "l - Queria saber o por quê dessa confusão.",
-                "ll - Queria saber porque você faltou aula.",
-                "lll - Acordo cedo porque gosto de estudar"
-            ],
-            "answers": [
-                "l, ll e lll",
-                "ll e lll",
-                "apenas a lll",
-                "apenas a l"
-            ]
-        }
-    ]
+    const [questions, setQuestions] = useState<any>()
+
+    const getData = () => {
+        fetch('data.json')
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (myJson) {
+                setQuestions(myJson);
+            });
+    }
+
+    useEffect(() => {
+        getData()
+    }, [])
 
     function handleQuestionSelect(question: any) {
         setActiveAnswer('')
@@ -214,7 +62,7 @@ export function Home() {
     return (
         <>
             <Header onClickClose={() => setCloseHeader(true)} close={closeHeader}>
-                {questions.map((question: any) => {
+                {questions?.map((question: any) => {
                     return <QuestionButton name={question.name} click={() => handleQuestionSelect(question)} key={question.id} active={questionToShow?.id === question.id} />
                 })}
             </Header>

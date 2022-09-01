@@ -3,32 +3,110 @@
     "name": "Exercício 1",
     "id": 1,
     "questions": [
-      "Queria saber o por quê dessa confusão.",
-      "",
-      "Queria saber porque você faltou aula.",
-      "Acordo cedo porque gosto de estudar"
+      "l - Queria saber o por quê dessa confusão.",
+      "ll - Queria saber porque você faltou aula.",
+      "lll - Acordo cedo porque gosto de estudar"
     ],
-    "answers": [
-      { "a": "ll e lll" },
-      { "b": "apenas a l" },
-      { "c": "l, ll e lll" },
-      { "d": "apenas a lll" }
-    ]
+    "answers": ["ll e lll", "apenas a l", "l, ll e lll", "apenas a lll"]
   },
   {
     "name": "Exercício 2",
     "id": 2,
     "questions": [
-      "Queria saber o por quê dessa confusão.",
-      "",
-      "Queria saber porque você faltou aula.",
-      "Acordo cedo porque gosto de estudar"
+      "l - Queria saber o por quê dessa confusão.",
+      "ll - Queria saber porque você faltou aula.",
+      "lll - Acordo cedo porque gosto de estudar"
     ],
-    "answers": [
-      { "a": "apenas a l" },
-      { "b": "apenas a l" },
-      { "c": "apenas a l" },
-      { "d": "apenas a l" }
-    ]
+    "answers": ["l, ll e lll", "ll e lll", "apenas a lll", "apenas a l"]
+  },
+  {
+    "name": "Exercício 3",
+    "id": 3,
+    "questions": [
+      "l - Queria saber o por quê dessa confusão.",
+      "ll - Queria saber porque você faltou aula.",
+      "lll - Acordo cedo porque gosto de estudar"
+    ],
+    "answers": ["l, ll e lll", "ll e lll", "apenas a lll", "apenas a l"]
+  },
+  {
+    "name": "Exercício 4",
+    "id": 4,
+    "questions": [
+      "l - Queria saber o por quê dessa confusão.",
+      "ll - Queria saber porque você faltou aula.",
+      "lll - Acordo cedo porque gosto de estudar"
+    ],
+    "answers": ["l, ll e lll", "ll e lll", "apenas a lll", "apenas a l"]
+  },
+  {
+    "name": "Exercício 5",
+    "id": 5,
+    "questions": [
+      "l - Queria saber o por quê dessa confusão.",
+      "ll - Queria saber porque você faltou aula.",
+      "lll - Acordo cedo porque gosto de estudar"
+    ],
+    "answers": ["l, ll e lll", "ll e lll", "apenas a lll", "apenas a l"]
+  },
+  {
+    "name": "Exercício 6",
+    "id": 6,
+    "questions": [
+      "l - Queria saber o por quê dessa confusão.",
+      "ll - Queria saber porque você faltou aula.",
+      "lll - Acordo cedo porque gosto de estudar"
+    ],
+    "answers": ["l, ll e lll", "ll e lll", "apenas a lll", "apenas a l"]
+  },
+  {
+    "name": "Exercício 7",
+    "id": 7,
+    "questions": [
+      "l - Queria saber o por quê dessa confusão.",
+      "ll - Queria saber porque você faltou aula.",
+      "lll - Acordo cedo porque gosto de estudar"
+    ],
+    "answers": ["l, ll e lll", "ll e lll", "apenas a lll", "apenas a l"]
+  },
+  {
+    "name": "Exercício 8",
+    "id": 8,
+    "questions": [
+      "l - Queria saber o por quê dessa confusão.",
+      "ll - Queria saber porque você faltou aula.",
+      "lll - Acordo cedo porque gosto de estudar"
+    ],
+    "answers": ["l, ll e lll", "ll e lll", "apenas a lll", "apenas a l"]
+  },
+  {
+    "name": "Exercício 9",
+    "id": 9,
+    "questions": [
+      "l - Queria saber o por quê dessa confusão.",
+      "ll - Queria saber porque você faltou aula.",
+      "lll - Acordo cedo porque gosto de estudar"
+    ],
+    "answers": ["l, ll e lll", "ll e lll", "apenas a lll", "apenas a l"]
+  },
+  {
+    "name": "Exercício 10",
+    "id": 10,
+    "questions": [
+      "l - Queria saber o por quê dessa confusão.",
+      "ll - Queria saber porque você faltou aula.",
+      "lll - Acordo cedo porque gosto de estudar"
+    ],
+    "answers": ["l, ll e lll", "ll e lll", "apenas a lll", "apenas a l"]
+  },
+  {
+    "name": "Exercício 11",
+    "id": 11,
+    "questions": [
+      "l - Queria saber o por quê dessa confusão.",
+      "ll - Queria saber porque você faltou aula.",
+      "lll - Acordo cedo porque gosto de estudar"
+    ],
+    "answers": ["l, ll e lll", "ll e lll", "apenas a lll", "apenas a l"]
   }
 ]
