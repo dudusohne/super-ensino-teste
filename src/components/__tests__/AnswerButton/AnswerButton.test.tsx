@@ -11,7 +11,7 @@ function toJson(component: renderer.ReactTestRenderer) {
 
 test('create AnswerButton', () => {
   const component = renderer.create(
-    <AnswerButton answer="resposta" />,
+    <AnswerButton answer="resposta" index={1} />
   )
   let tree = toJson(component)
   expect(tree).toMatchSnapshot()

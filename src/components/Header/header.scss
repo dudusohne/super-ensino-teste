@@ -1,8 +1,10 @@
+@import '../../styles/global.scss';
+
 .header {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #f6fcfe;
+  background-color: $background;
 
   .top {
     display: flex;
@@ -17,15 +19,15 @@
 
     span {
       font-weight: bold;
-      color: rgb(65, 65, 65);
+      color: $text-primary;
     }
 
     .chevron {
-      color: #38d0fc;
+      color: $primary;
     }
 
     .chevron:hover {
-      color: #11576b;
+      color: $secondary;
       cursor: pointer;
     }
   }
@@ -41,7 +43,7 @@
     height: 5vh;
 
     span {
-      color: rgb(80, 80, 80);
+      color: $text-primary;
       font-weight: medium;
     }
   }

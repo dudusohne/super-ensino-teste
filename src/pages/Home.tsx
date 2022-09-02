@@ -9,7 +9,7 @@ import { QuestionItem } from "../components/QuestionItem";
 
 import '../styles/home.scss';
 
-import { Answer, Question } from "../types";
+import { Question } from "../types";
 
 const jsonData: Question[] = [
     {
@@ -183,22 +183,21 @@ export function Home() {
             }
             <div className="container-answers">
                 {questionToShow ?
-                    <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
+                    <div className="container-wrapper">
                         <MdArrowBackIos className="nav-icons" onClick={() => handlePrevQuestion()} />
-                        <div style={{ display: 'flex', flexDirection: 'column' }}>
-
-                            <div style={{ display: 'flex', flexDirection: 'row' }}>
-                                <span style={{ color: '#cccccc', fontWeight: 'bold' }}>(1762)</span>
-                                <span style={{ color: '#38d0fc', fontWeight: 'bold', marginLeft: '8px' }}>Exercício {questionToShow?.id + `/${questions?.length}`}</span>
+                        <div className="wrapper-questions">
+                            <div className="container-title">
+                                <span className="number">(1762)</span>
+                                <span className="exerc">Exercício {questionToShow?.id + `/${questions?.length}`}</span>
                             </div>
 
-                            <span style={{ marginTop: '6px', fontWeight: 'bold', fontSize: '16px', color: '#4e4e4e' }}>(SUPER ENSINO) Analise as afirmativas a seguir:</span>
+                            <span className="questions-title">(SUPER ENSINO) Analise as afirmativas a seguir:</span>
 
                             {questionToShow?.questions?.map((quest: string) => {
                                 return <QuestionItem question={quest} key={quest} />
                             })}
 
-                            <span style={{ marginTop: '1rem', fontWeight: 'bold', fontSize: '16px', color: '#4e4e4e' }}>Com relação ao uso dos porquês, estão corretas:</span>
+                            <span className="questions-title">Com relação ao uso dos porquês, estão corretas:</span>
 
                             <div className="answers">
                                 {questionToShow?.answers?.map((answer: string, index: number) => {

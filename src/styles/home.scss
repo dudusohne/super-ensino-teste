@@ -1,3 +1,5 @@
+@import "./global.scss";
+
 .container-closed {
   display: flex;
   width: 100%;
@@ -6,15 +8,15 @@
   justify-content: flex-end;
   padding: 21px 16px 0 0;
 
-  background-color: #e8f4f8;
+  background-color: $background;
 
   .chevron-down {
-    color: #38d0fc;
+    color: $primary;
     margin-bottom: -10px;
   }
 
   .chevron-down:hover {
-    color: #11576b;
+    color: $secondary;
     cursor: pointer;
   }
 }
@@ -26,21 +28,58 @@
   margin-top: 1rem;
   padding: 20px;
 
-  .answers {
+  .container-wrapper {
     display: flex;
-    flex-direction: column;
-    margin-top: 1rem;
-  }
+    flex-direction: row;
+    justify-content: space-between;
 
-  .nav-icons {
-    font-size: 5rem;
-    color: #38d0fc;
-    align-self: center;
-  }
+    .wrapper-questions {
+      display: flex;
+      flex-direction: column;
 
-  .nav-icons:hover {
-    color: #11576b;
-    cursor: pointer;
+      .questions-title {
+        margin-top: 6px;
+        font-weight: bold;
+        font-size: 16px;
+        color: $text-primary;
+      }
+
+      .container-title {
+        display: flex;
+        flex-direction: row;
+
+        span {
+          font-weight: bold;
+          font-family: $font;
+        }
+
+        .number {
+          color: #cccccc;
+        }
+
+        .exerc {
+          margin-left: 8px;
+          color: $primary;
+        }
+      }
+
+      .answers {
+        display: flex;
+        flex-direction: column;
+        margin-top: 1rem;
+      }
+
+      .nav-icons {
+        font-size: 5rem;
+        color: $primary;
+        align-self: center;
+      }
+
+      .nav-icons:hover {
+        color: $secondary;
+        cursor: pointer;
+      }
+    }
   }
 
   .no-question-selected {

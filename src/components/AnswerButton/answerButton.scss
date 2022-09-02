@@ -1,7 +1,9 @@
+@import "../../styles/global.scss";
+
 .answerButton {
   display: flex;
   flex-direction: row;
-  background-color: #fcfcfc;
+  background-color: $background;
   border-radius: 3px;
   border: none;
 
@@ -17,18 +19,18 @@
 
   span {
     margin-left: 10px;
-    font-family: "Noto Sans", sans-serif;
+    font-family: $font;
     font-weight: bold;
-    color: rgb(85, 85, 85);
+    color: $text-primary;
   }
 
   p {
     font-weight: bold;
-    font-family: "Noto Sans", sans-serif;
+    font-family: $font;
   }
 }
 
 .answerButton:hover {
-  background-color: #c9d9df;
+  opacity: 0.7;
   cursor: pointer;
 }
