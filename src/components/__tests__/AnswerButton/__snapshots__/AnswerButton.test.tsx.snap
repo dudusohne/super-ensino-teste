@@ -18,9 +18,7 @@ exports[`create AnswerButton 1`] = `
           "color": "#7a7a7a",
         }
       }
-    >
-      a
-    </p>
+    />
   </div>
   <span>
     resposta
@@ -46,9 +44,7 @@ exports[`create AnswerButton 2`] = `
           "color": "#7a7a7a",
         }
       }
-    >
-      a
-    </p>
+    />
   </div>
   <span>
     resposta

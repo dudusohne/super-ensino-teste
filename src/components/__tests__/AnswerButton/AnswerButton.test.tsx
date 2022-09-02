@@ -1,6 +1,6 @@
+import React from 'react'
 import renderer from 'react-test-renderer'
 import { AnswerButton } from '../../AnswerButton'
-import React from 'react'
 
 function toJson(component: renderer.ReactTestRenderer) {
   const result = component.toJSON()

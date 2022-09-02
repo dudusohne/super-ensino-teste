@@ -6,17 +6,22 @@ interface Props {
     isActive?: boolean;
     answer: string;
     onClickAnswer?: () => void;
+    index?: any;
 }
 
-export function AnswerButton(props: Props) {
+const letters = ['a', 'b', 'c', 'd']
+
+export function AnswerButton({isActive, answer, onClickAnswer, index}: Props) {
     return (
         <button
             className="answerButton"
-            onClick={props.onClickAnswer}>
-            <div className="answer-letter-wrapper" style={{ backgroundColor: `${props.isActive ? '#38d0fc' : '#cfcfcf'}`, }}>
-                <p style={{ color: `${props.isActive ? '#07333f' : '#7a7a7a'}`, }}>a</p>
+            onClick={onClickAnswer}>
+            <div className="answer-letter-wrapper" style={{ backgroundColor: `${isActive ? '#38d0fc' : '#cfcfcf'}`, }}>
+                <p style={{ color: `${isActive ? '#07333f' : '#7a7a7a'}`, }}>
+                    {letters[index]}
+                </p>
             </div>
-            <span>{props.answer}</span>
+            <span>{answer}</span>
         </button>
     )
 }

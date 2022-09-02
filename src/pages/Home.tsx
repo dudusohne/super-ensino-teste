@@ -66,10 +66,10 @@ export function Home() {
                     return <QuestionButton name={question.name} click={() => handleQuestionSelect(question)} key={question.id} active={questionToShow?.id === question.id} />
                 })}
             </Header>
-            {!!closeHeader ?
+            {closeHeader &&
                 <div className="container-closed">
                     <FaChevronCircleDown className="chevron-down" onClick={() => setCloseHeader(false)} />
-                </div> : ''
+                </div>
             }
             <div className="container-answers">
                 {questionToShow ?
@@ -91,16 +91,16 @@ export function Home() {
                             <span style={{ marginTop: '1rem', fontWeight: 'bold', fontSize: '16px', color: '#4e4e4e' }}>Com relação ao uso dos porquês, estão corretas:</span>
 
                             <div className="answers">
-                                {questionToShow?.answers?.map((answer: any) => {
+                                {questionToShow?.answers?.map((answer: any, index: any) => {
                                     return (
-                                        <AnswerButton isActive={activeAnswer === answer} answer={answer} onClickAnswer={() => setActiveAnswer(answer)} />
+                                        <AnswerButton isActive={activeAnswer === answer} answer={answer} onClickAnswer={() => setActiveAnswer(answer)} index={index} />
                                     )
                                 })}
                             </div>
                         </div>
                         <MdArrowForwardIos className="nav-icons" onClick={() => handleNextQuestion()} />
                     </div> :
-                    <div className="noQuestionSelected">
+                    <div className="no-question-selected">
                         <p>NENHUM EXERCÍCIO SELECIONADO</p>
                         <span>SELECIONE UM EXERCÍCIO!</span>
                     </div>
