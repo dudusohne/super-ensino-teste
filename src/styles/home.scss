@@ -68,17 +68,17 @@
         flex-direction: column;
         margin-top: 1rem;
       }
+    }
+    
+    .nav-icons {
+      font-size: 5rem;
+      color: $primary;
+      align-self: center;
+    }
 
-      .nav-icons {
-        font-size: 5rem;
-        color: $primary;
-        align-self: center;
-      }
-
-      .nav-icons:hover {
-        color: $secondary;
-        cursor: pointer;
-      }
+    .nav-icons:hover {
+      color: $secondary;
+      cursor: pointer;
     }
   }
 
