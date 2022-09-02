@@ -1,7 +1,10 @@
 # TESTE - SUPER ENSINO
 
-## deployed at vercel
-[click to see](https://super-ensino-teste.vercel.app/)
+---------
+
+## deployed at vercel: [click to see](https://super-ensino-teste.vercel.app/)
+
+---------
 
 ### To install 
 `yarn`
@@ -14,6 +17,8 @@
 
 ### To run tests
 `yarn test`
+
+---------
 
 ## About the project
 

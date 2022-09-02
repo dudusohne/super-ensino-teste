@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { FaChevronCircleDown, FaChevronCircleLeft, FaChevronCircleRight, FaChevronCircleUp } from "react-icons/fa";
+import { FaChevronCircleDown } from "react-icons/fa";
 import { MdArrowBackIos, MdArrowForwardIos } from 'react-icons/md'
-import { TiDocumentText } from "react-icons/ti";
+
 import { AnswerButton } from "../components/AnswerButton";
 import { Header } from "../components/Header";
 import { QuestionButton } from "../components/QuestionButton";
@@ -10,6 +10,119 @@ import { QuestionItem } from "../components/QuestionItem";
 export const answerCharIndex = ['a', 'b', 'c', 'd'];
 
 import '../styles/home.scss';
+
+const jsonData = [
+    {
+        "name": "Exercício 1",
+        "id": 1,
+        "questions": [
+            "l - Queria saber o por quê dessa confusão.",
+            "ll - Queria saber porque você faltou aula.",
+            "lll - Acordo cedo porque gosto de estudar"
+        ],
+        "answers": ["ll e lll", "apenas a l", "l, ll e lll", "apenas a lll"]
+    },
+    {
+        "name": "Exercício 2",
+        "id": 2,
+        "questions": [
+            "l - Queria saber o por quê dessa confusão.",
+            "ll - Queria saber porque você faltou aula.",
+            "lll - Acordo cedo porque gosto de estudar"
+        ],
+        "answers": ["l, ll e lll", "ll e lll", "apenas a lll", "apenas a l"]
+    },
+    {
+        "name": "Exercício 3",
+        "id": 3,
+        "questions": [
+            "l - Queria saber o por quê dessa confusão.",
+            "ll - Queria saber porque você faltou aula.",
+            "lll - Acordo cedo porque gosto de estudar"
+        ],
+        "answers": ["l, ll e lll", "ll e lll", "apenas a lll", "apenas a l"]
+    },
+    {
+        "name": "Exercício 4",
+        "id": 4,
+        "questions": [
+            "l - Queria saber o por quê dessa confusão.",
+            "ll - Queria saber porque você faltou aula.",
+            "lll - Acordo cedo porque gosto de estudar"
+        ],
+        "answers": ["l, ll e lll", "ll e lll", "apenas a lll", "apenas a l"]
+    },
+    {
+        "name": "Exercício 5",
+        "id": 5,
+        "questions": [
+            "l - Queria saber o por quê dessa confusão.",
+            "ll - Queria saber porque você faltou aula.",
+            "lll - Acordo cedo porque gosto de estudar"
+        ],
+        "answers": ["l, ll e lll", "ll e lll", "apenas a lll", "apenas a l"]
+    },
+    {
+        "name": "Exercício 6",
+        "id": 6,
+        "questions": [
+            "l - Queria saber o por quê dessa confusão.",
+            "ll - Queria saber porque você faltou aula.",
+            "lll - Acordo cedo porque gosto de estudar"
+        ],
+        "answers": ["l, ll e lll", "ll e lll", "apenas a lll", "apenas a l"]
+    },
+    {
+        "name": "Exercício 7",
+        "id": 7,
+        "questions": [
+            "l - Queria saber o por quê dessa confusão.",
+            "ll - Queria saber porque você faltou aula.",
+            "lll - Acordo cedo porque gosto de estudar"
+        ],
+        "answers": ["l, ll e lll", "ll e lll", "apenas a lll", "apenas a l"]
+    },
+    {
+        "name": "Exercício 8",
+        "id": 8,
+        "questions": [
+            "l - Queria saber o por quê dessa confusão.",
+            "ll - Queria saber porque você faltou aula.",
+            "lll - Acordo cedo porque gosto de estudar"
+        ],
+        "answers": ["l, ll e lll", "ll e lll", "apenas a lll", "apenas a l"]
+    },
+    {
+        "name": "Exercício 9",
+        "id": 9,
+        "questions": [
+            "l - Queria saber o por quê dessa confusão.",
+            "ll - Queria saber porque você faltou aula.",
+            "lll - Acordo cedo porque gosto de estudar"
+        ],
+        "answers": ["l, ll e lll", "ll e lll", "apenas a lll", "apenas a l"]
+    },
+    {
+        "name": "Exercício 10",
+        "id": 10,
+        "questions": [
+            "l - Queria saber o por quê dessa confusão.",
+            "ll - Queria saber porque você faltou aula.",
+            "lll - Acordo cedo porque gosto de estudar"
+        ],
+        "answers": ["l, ll e lll", "ll e lll", "apenas a lll", "apenas a l"]
+    },
+    {
+        "name": "Exercício 11",
+        "id": 11,
+        "questions": [
+            "l - Queria saber o por quê dessa confusão.",
+            "ll - Queria saber porque você faltou aula.",
+            "lll - Acordo cedo porque gosto de estudar"
+        ],
+        "answers": ["l, ll e lll", "ll e lll", "apenas a lll", "apenas a l"]
+    }
+]
 
 export function Home() {
     const [questionToShow, setQuestionToShow] = useState<any>()
@@ -20,13 +133,7 @@ export function Home() {
     const [questions, setQuestions] = useState<any>()
 
     const getData = () => {
-        fetch('data.json')
-            .then(function (response) {
-                return response.json();
-            })
-            .then(function (myJson) {
-                setQuestions(myJson);
-            });
+        setQuestions(jsonData);
     }
 
     useEffect(() => {

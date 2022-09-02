@@ -9,7 +9,7 @@ interface Props {
     index?: any;
 }
 
-const letters = ['a', 'b', 'c', 'd']
+const options = ['a', 'b', 'c', 'd']
 
 export function AnswerButton({isActive, answer, onClickAnswer, index}: Props) {
     return (
@@ -18,7 +18,7 @@ export function AnswerButton({isActive, answer, onClickAnswer, index}: Props) {
             onClick={onClickAnswer}>
             <div className="answer-letter-wrapper" style={{ backgroundColor: `${isActive ? '#38d0fc' : '#cfcfcf'}`, }}>
                 <p style={{ color: `${isActive ? '#07333f' : '#7a7a7a'}`, }}>
-                    {letters[index]}
+                    {options[index]}
                 </p>
             </div>
             <span>{answer}</span>
