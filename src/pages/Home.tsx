@@ -7,11 +7,11 @@ import { Header } from "../components/Header";
 import { QuestionButton } from "../components/QuestionButton";
 import { QuestionItem } from "../components/QuestionItem";
 
-export const answerCharIndex = ['a', 'b', 'c', 'd'];
-
 import '../styles/home.scss';
 
-const jsonData = [
+import { Answer, Question } from "../types";
+
+const jsonData: Question[] = [
     {
         "name": "Exercício 1",
         "id": 1,
@@ -125,12 +125,12 @@ const jsonData = [
 ]
 
 export function Home() {
-    const [questionToShow, setQuestionToShow] = useState<any>()
+    const [questionToShow, setQuestionToShow] = useState<Question>()
     const [activeAnswer, setActiveAnswer] = useState<string>()
 
     const [closeHeader, setCloseHeader] = useState<boolean>(false)
 
-    const [questions, setQuestions] = useState<any>()
+    const [questions, setQuestions] = useState<Question[]>([])
 
     const getData = () => {
         setQuestions(jsonData);
@@ -140,7 +140,7 @@ export function Home() {
         getData()
     }, [])
 
-    function handleQuestionSelect(question: any) {
+    function handleQuestionSelect(question: Question) {
         setActiveAnswer('')
         setQuestionToShow(question)
     }
@@ -151,7 +151,8 @@ export function Home() {
         if (questionToShow?.id === questions.length) {
             setQuestionToShow(questions[0])
         } else {
-            setQuestionToShow(questions[questionToShow?.id])
+            const index = questionToShow?.id ?? 0
+            setQuestionToShow(questions[index])
         }
     }
 
@@ -162,15 +163,17 @@ export function Home() {
             let size = questions.length - 1
             setQuestionToShow(questions[size])
         } else {
-            setQuestionToShow(questions[questionToShow?.id - 2])
+            let id = questionToShow?.id ?? 0
+            let index = id - 2
+            setQuestionToShow(questions[index])
         }
     }
 
     return (
         <>
             <Header onClickClose={() => setCloseHeader(true)} close={closeHeader}>
-                {questions?.map((question: any) => {
-                    return <QuestionButton name={question.name} click={() => handleQuestionSelect(question)} key={question.id} active={questionToShow?.id === question.id} />
+                {questions?.map((question: Question) => {
+                    return <QuestionButton name={question?.name} click={() => handleQuestionSelect(question)} key={question.id} active={questionToShow?.id === question.id} />
                 })}
             </Header>
             {closeHeader &&
@@ -186,19 +189,19 @@ export function Home() {
 
                             <div style={{ display: 'flex', flexDirection: 'row' }}>
                                 <span style={{ color: '#cccccc', fontWeight: 'bold' }}>(1762)</span>
-                                <span style={{ color: '#38d0fc', fontWeight: 'bold', marginLeft: '8px' }}>Exercício {questionToShow?.id + `/${questions.length}`}</span>
+                                <span style={{ color: '#38d0fc', fontWeight: 'bold', marginLeft: '8px' }}>Exercício {questionToShow?.id + `/${questions?.length}`}</span>
                             </div>
 
                             <span style={{ marginTop: '6px', fontWeight: 'bold', fontSize: '16px', color: '#4e4e4e' }}>(SUPER ENSINO) Analise as afirmativas a seguir:</span>
 
-                            {questionToShow?.questions?.map((quest: any) => {
+                            {questionToShow?.questions?.map((quest: string) => {
                                 return <QuestionItem question={quest} key={quest} />
                             })}
 
                             <span style={{ marginTop: '1rem', fontWeight: 'bold', fontSize: '16px', color: '#4e4e4e' }}>Com relação ao uso dos porquês, estão corretas:</span>
 
                             <div className="answers">
-                                {questionToShow?.answers?.map((answer: any, index: any) => {
+                                {questionToShow?.answers?.map((answer: string, index: number) => {
                                     return (
                                         <AnswerButton isActive={activeAnswer === answer} answer={answer} onClickAnswer={() => setActiveAnswer(answer)} index={index} />
                                     )
